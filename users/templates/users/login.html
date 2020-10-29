@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}}">
+   {{message}}
+</div>
+{% endfor %}
+{% endif %}
+{% block content %}
+<br><br><br><br><br><br>
+    <div class="content-section">
+        <form action="" method="POSt">
+            {% csrf_token %}
+            <fieldset class="form-group">
+              <legend class="border-bottom mb4" >Log In </legend>
+               {{form.as_p}}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info " type="submit">Sign In</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">Need an Account?
+                <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+            </small>
+        </div>
+    </div>
+
+    
+{% endblock %}

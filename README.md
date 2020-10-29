@@ -1,2 +1,2 @@
-# Dev-plat
-Software for karu developers
+# first-project
+karu dev platform
